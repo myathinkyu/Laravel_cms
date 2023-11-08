@@ -45,7 +45,7 @@ class PostsController extends Controller
      */
     public function show($id)
     {
-        //
+        return "I am show method with id of " . $id;
     }
 
     /**
@@ -56,7 +56,7 @@ class PostsController extends Controller
      */
     public function edit($id)
     {
-        //
+        return "I am edit method with id of " . $id;
     }
 
     /**
@@ -82,8 +82,19 @@ class PostsController extends Controller
         //
     }
 
-    public function privacy($username, $password)
+    public function home($name, $country)
     {
-        return "I am privacy method of Posts Controller and username is <h3>$username</h3> and password is<h3>$password</h3>";
+        //return view('home')->with(array('name'=>$name, 'country'=>$country));
+        return view('home', compact('name', 'country'));
+    }
+
+    public function about()
+    {
+        return view('about');
+    }
+
+    public function contact()
+    {
+        return view('contact');
     }
 }
